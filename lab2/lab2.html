@@ -12,24 +12,25 @@
         <table className="radiobtns">
             <tr>
                 <td>
-                        <input type="text" value="Title"><br>
-                        <input type="text" value="Description"><br>
+                        <input type="text" name="title" value="Title"><br>
+                        <input type="text" name="description" value="Description"><br>
                         <h3>Choose Genre</h3>
-                        <select className="genre">
+                        <select name="genre">
                             <option value=0>Abstract</option>
                             <option value=1>Baroque</option>
                             <option value=2>Gothic</option>
                             <option value=3>Renaissance</option>
                         </select>
                         <h3>Choose Subject</h3>        
-                        <select className="subject">
+                        <select name="subject">
                             <option value=0>Landscape</option>
                             <option value=1>Portrait</option>
                         </select><br>
-                        <input type="text" value="Year"><br>
-                        <input type="text" value="Museum"><br>
+                        <input type="text" name="year" value="Year"><br>
+                        <input type="text" name="museum" value="Museum"><br>
                 </td>
                 <td>
+                    <h3>Type of Artwork</h3>
                     <input type="radio" name="type" value="painting">Painting<br>
                     <input type="radio" name="type" value="sculpture">Sculpture<br>
                 </td>
@@ -39,6 +40,7 @@
     
                 </td>
                 <td>
+                    <h3>Creative Commons Specification</h3>
                     <input type="checkbox" name="creativecommons" value="Commercial">Commercial<br>
                     <input type="checkbox" name="creativecommons" value="Non-Commercial">Non-commercial<br>
                     <input type="checkbox" name="creativecommons" value="Derivative_Work">Derivative Work<br>
