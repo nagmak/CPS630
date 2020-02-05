@@ -16,7 +16,7 @@
 }
 
 #bookshelf tr:nth-child(even){background-color: #f2f2f2;}
-#bookshelf tr:hover {background-color: #ddd;}
+
 
 #bookshelf th {
     padding-top: 12px;
