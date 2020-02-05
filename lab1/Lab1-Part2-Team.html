@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="Lab1-Part2-Team.css">
+<title>Book-Center</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="txtbox"><br>
+        <select className="Type">
+            <option value=0>Science</option>
+            <option value=1>Geography</option>
+            <option value=2>History</option>
+            <option value=3>Fashion</option>
+        </select>         
+        <select className="Action">
+            <option value=0>Archive</option>
+            <option value=1>Edit</option>
+            <option value=2>Delete</option>
+            <option value=3>Collection</option>
+          </select> 
+    </form>      
+
+    <table id="bookshelf" style="width:100%">
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+        <tr id="book1row">
+            <td>
+                <input type="radio" name="book" id="fadein1" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout1" value="Fade Out">Fade Out
+                <img id="book1" src="book1.jpg" alt="The God of Small Things by Arundhati Rao book" width="20%">
+                <input type="radio" name="book" id="fadein4" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout4" value="Fade Out">Fade Out
+            </td>
+                <td class="book1info">The God of Small Things</td>
+                <td class="book1info">Arundhati Roy</td>
+                <td class="book1info">1997</td>
+                <td class="book1info">History</td>
+                <td class="book1info">
+                    <button type="button">Archive</button>
+                    <button type="button">Edit</button>
+                    <button type="button">Delete</button>
+                    <button type="button">Collection</button>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="book" id="fadein2" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout2" value="Fade Out">Fade Out                
+                <img id="book2" src="book2.jpg" alt="The Brief Wondrous Life of Oscar Wao by Junit Diaz book" width="20%">
+                <input type="radio" name="book" id="fadein5" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout5" value="Fade Out">Fade Out
+            </td>
+            <td id="book2info">The Brief Wondrous Life of Oscar Wao</td>
+            <td id="book2info">Junot Diaz</td>
+            <td id="book2info">2007</td>
+            <td id="book2info">History</td>
+            <td id="book2info">
+                    <button type="button">Archive</button>
+                    <button type="button">Edit</button>
+                    <button type="button">Delete</button>
+                    <button type="button">Collection</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="book" id="fadein3" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout3" value="Fade Out">Fade Out
+                <img id="book3" src="book3.jpg" alt="White Teeth by Zadie Smith book" width="20%">
+                <input type="radio" name="book" id="fadein6" value="Fade In">Fade In
+                <input type="radio" name="book" id="fadeout6" value="Fade Out">Fade Out
+            </td>
+            <td id="book3info">White Teeth</td>
+            <td id="book3info">Zadie Smith</td>
+            <td id="book3info">2000</td>
+            <td id="book3info">History</td>
+            <td id="book3info">
+                    <button type="button">Archive</button>
+                    <button type="button">Edit</button>
+                    <button type="button">Delete</button>
+                    <button type="button">Collection</button>
+            </td>
+        </tr>
+      </table>
+</body>
+<script>
+    // Book Image Fading
+    $( "#fadein1" ).click(function() {
+        $( "#book1" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout1" ).click(function() {
+        $( "#book1" ).fadeOut( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadein2" ).click(function() {
+        $( "#book2" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout2" ).click(function() {
+        $( "#book2" ).fadeOut( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadein3" ).click(function() {
+        $( "#book3" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout3" ).click(function() {
+        $( "#book3" ).fadeOut( "slow", function() {
+            // Animation complete
+        });
+    });
+    
+    // Book Info Fading
+    $( "#fadein4" ).click(function() {
+        $( "#book1info" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout4" ).click(function() {
+        $( "#book1row td" ).fadeOut( "slow", function() {
+            console.log("hello");
+        });
+    });
+    $( "#fadein5" ).click(function() {
+        $( "#book2info" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout5" ).click(function() {
+        $( "#book2info" ).fadeOut( "slow", function() {
+    
+        });
+    });
+    $( "#fadein6" ).click(function() {
+        $( "#book3info" ).fadeIn( "slow", function() {
+            // Animation complete
+        });
+    });
+    $( "#fadeout6" ).click(function() {
+        $( "#book3info" ).fadeOut( "slow", function() {
+            // Animation complete
+        });
+    });
+
+    // Animating text box on hover
+    $("#txtbox").on("mouseover", function() {
+        $("#txtbox").animate({opacity: '1'});
+    });
+
+    $("#txtbox").on("mouseleave", function() {
+        $("#txtbox").animate({opacity: '0.5'});
+    });
+
+</script>
+
+</html>
