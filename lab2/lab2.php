@@ -1,15 +1,17 @@
 
 <?php
-    echo $_REQUEST["title"] \n;
-    echo $_REQUEST["description"]\n;
-    echo $_REQUEST["genre"]\n;
-    echo $_REQUEST["subject"]\n;
-    echo $_REQUEST["year"]\n;
-    echo $_REQUEST["museum"]\n;
-    echo $_REQUEST["type"]\n;
-foreach ($_REQUEST["creativecommons"] as $cc){
-    echo $cc\n;
-}
+    $artArray = [
+        "title" => $_REQUEST["title"],
+        "description" => $_REQUEST["description"],
+        "genre" => $_REQUEST["genre"],
+        "subject" => $_REQUEST["subject"],
+        "year" => $_REQUEST["year"],
+        "museum" => $_REQUEST["museum"],
+        "type" => $_REQUEST["type"],
+        "creativecommons" => $_REQUEST["creativecommons"],
+    ];
+    
+    var_dump($artArray);
 ?>
 
 <html>
@@ -25,27 +27,29 @@ foreach ($_REQUEST["creativecommons"] as $cc){
         <table className="radiobtns">
             <tr>
                 <td>
-                        <input type="text" name="title" value="Title"><br>
-                        <input type="text" name="description" value="Description"><br>
+                        <input required type="text" name="title" placeholder="Title"><br>
+                        <input requried type="text" name="description" placeholder="Description"><br>
                         <h3>Choose Genre</h3>
-                        <select name="genre">
+                        <select required name="genre">
+                            <option selected disabled value="">choose genre</option>
                             <option value="abstract">Abstract</option>
                             <option value="baroque">Baroque</option>
                             <option value="gothic">Gothic</option>
                             <option value="renaissance">Renaissance</option>
                         </select>
                         <h3>Choose Subject</h3>        
-                        <select name="subject">
+                        <select required name="subject">
+                            <option selected disabled value="">choose suject</option>
                             <option value="landscape">Landscape</option>
                             <option value="portrait">Portrait</option>
                         </select><br>
-                        <input type="text" name="year" value="Year"><br>
-                        <input type="text" name="museum" value="Museum"><br>
+                        <input required type="number" name="year" placeholder="year"><br>
+                        <input required type="text" name="museum" placeholder="museum"><br>
                 </td>
                 <td>
                     <h3>Type of Artwork</h3>
-                    <input type="radio" name="type" value="painting">Painting<br>
-                    <input type="radio" name="type" value="sculpture">Sculpture<br>
+                    <input required type="radio" name="type" value="painting">Painting<br>
+                    <input required type="radio" name="type" value="sculpture">Sculpture<br>
                 </td>
             </tr>
             <tr>
@@ -54,10 +58,10 @@ foreach ($_REQUEST["creativecommons"] as $cc){
                 </td>
                 <td>
                     <h3>Creative Commons Specification</h3>
-                    <input type="checkbox" name="creativecommons" value="Commercial">Commercial<br>
-                    <input type="checkbox" name="creativecommons" value="Non-Commercial">Non-commercial<br>
-                    <input type="checkbox" name="creativecommons" value="Derivative_Work">Derivative Work<br>
-                    <input type="checkbox" name="creativecommons" value="Non-Derivative_Work">Non-Derivative Work<br>
+                    <input type="checkbox" name="creativecommons[]" value="Commercial">Commercial<br>
+                    <input type="checkbox" name="creativecommons[]" value="Non-Commercial">Non-commercial<br>
+                    <input type="checkbox" name="creativecommons[]" value="Derivative_Work">Derivative Work<br>
+                    <input type="checkbox" name="creativecommons[]" value="Non-Derivative_Work">Non-Derivative Work<br>
                 </td>
             </tr>
         </table>
@@ -66,8 +70,6 @@ foreach ($_REQUEST["creativecommons"] as $cc){
 
     </form>
 </body>
-<script>
 
-</script>
 
 </html>
