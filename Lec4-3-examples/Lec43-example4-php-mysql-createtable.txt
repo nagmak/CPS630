@@ -1,0 +1,68 @@
+ <?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to create table
+$sql = "CREATE TABLE StRec (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table Student Records created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?> 
+
+
+
+Rules:
+
+In MySQL there are three main data types: text, number, and date
+
+
+Data type 	Description
+CHAR(size) 	Holds a fixed length string (can contain letters, numbers, and special characters). The fixed size is specified in parenthesis. Can store up to 255 characters
+VARCHAR(size) 	Holds a variable length string (can contain letters, numbers, and special characters). The maximum size is specified in parenthesis. Can store up to 255 characters. Note: If you put a greater value than 255 it will be converted to a TEXT type
+TINYTEXT 	Holds a string with a maximum length of 255 characters
+TEXT 	Holds a string with a maximum length of 65,535 characters
+BLOB 	For BLOBs (Binary Large OBjects). Holds up to 65,535 bytes of data
+MEDIUMTEXT 	Holds a string with a maximum length of 16,777,215 characters
+MEDIUMBLOB 	For BLOBs (Binary Large OBjects). Holds up to 16,777,215 bytes of data
+LONGTEXT 	Holds a string with a maximum length of 4,294,967,295 characters
+LONGBLOB 	For BLOBs (Binary Large OBjects). Holds up to 4,294,967,295 bytes of data
+ENUM(x,y,z,etc.) 	Let you enter a list of possible values. You can list up to 65535 values in an ENUM list. If a value is inserted that is not in the list, a blank value will be inserted.
+
+Note: The values are sorted in the order you enter them.
+You enter the possible values in this format: ENUM('X','Y','Z')
+SET 	Similar to ENUM except that SET may contain up to 64 list items and can store more than one choice
+
+
+
+
+
+
+After the data type, you can specify other optional attributes for each column:
+
+    NOT NULL - Each row must contain a value for that column, null values are not allowed
+    DEFAULT value - Set a default value that is added when no other value is passed
+    UNSIGNED - Used for number types, limits the stored data to positive numbers and zero
+    AUTO INCREMENT - MySQL automatically increases the value of the field by 1 each time a new record is added
+    PRIMARY KEY - Used to uniquely identify the rows in a table. The column with PRIMARY KEY setting is often an ID number, and is often used with AUTO_INCREMENT
+
+Each table should have a primary key column (in this case: the "id" column). Its value must be unique for each record in the table.
