@@ -4,8 +4,8 @@
 <script type="text/javascript" src="./br-detect.js"></script>   
 </head>  
 <body>        
-    <h1> Display Cross Browsers Compatibility Issues line1</h1>       
-    <p> Display Cross Browsers Compatibility Issues line2</p> 
+    <h1> Php browser detect</h1>
+
     <?php          
         echo " Trying to detect Browser name! . <br/>";          
         function brdetect()          
@@ -19,8 +19,13 @@
             else if ( strpos ($res, "Trident") == true)    
             echo "Browser: Internet Explorer";                                
             else  echo "Browser: unkown";           
-            }           
-            brdetect( );   
+        }           
+        brdetect( );   
     ?> 
+    
+    <h1> javascript browser detect</h1>
+        <div id="javascriptstuff">
+        </div>
+
     </body> 
     </html>
