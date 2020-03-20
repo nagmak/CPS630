@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <head>       
-<TITLE>how to detect browser using PHP </TITLE>        
+<TITLE>how to detect browser using PHP </TITLE>
+<script type="text/javascript" src="./br-detect.js"></script>   
 </head>  
 <body>        
     <h1> Display Cross Browsers Compatibility Issues line1</h1>       
