@@ -1,14 +1,12 @@
  
-     <!doctype html>
-     <html ng-app>
+<!DOCTYPE html>
+    <html ng-app="student">
      <head>
                  <title>AngularJS MVC Architecture</title>
                  <script src="angularjs-test/angular.min.js"></script>
-                 <script type='text/javascript'>
-                 </script> 
      </head>
      <body>
-                 <div ng-app="student-name" ng-controller="fullName">
+                 <div ng-controller="fullName">
                           <p>{{Student.FName}}</p>
                  </div>
                  <script type="text/javascript">
@@ -19,7 +17,9 @@
                                 'LName' :   'Smith', 
                             
                             }
-                    };
+                    }
+                    var fullCtr = angular.module('student', []);
+                    fullCtr.controller('fullName', fullName);
                  </script>
      </body>
      </html>
