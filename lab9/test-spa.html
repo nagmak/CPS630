@@ -3,6 +3,7 @@
     <head> 
         <script src="./angularjs-test/angular.min.js"></script> 
         <script src="./angularjs-test/angular.route.min.js"></script>
+        <script src="app.js"></script>
     </head> 
     <body>
         <script type="text/ng-template" id="pages/home.html"> 
@@ -17,11 +18,10 @@
             <h1>Reviews</h1> 
             <h3>{{message}}</h3> 
         </script>
-        <a href="#/">Home</a> 
-        <a href="#/aboutus">Aboutus</a> 
-        <a href="#/reviews">Reviews</a> 
+        <a href="test-spa.html#!/">Home</a> 
+        <a href="test-spa.html#!/aboutus">Aboutus</a> 
+        <a href="test-spa.html#!/reviews">Reviews</a> 
         <div ng-view></div> 
-        <script src="app.js"></script>
         <h1>{{message}}</h1>
     </body> 
 </html>
